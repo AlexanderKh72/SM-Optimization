@@ -3,9 +3,9 @@
 #include <vector>
 #include <algorithm>
 
-optimResult SimpleStochasticOptimizer::optimize(const AbstrFunction * f, 
+optimResult SimpleStochasticOptimizer::optimize(std::shared_ptr<const AbstrFunction> f, 
     const Point& init, 
-    const RectArea& area, const AbstrStopCriteria * stop_criteria)
+    const RectArea& area, std::shared_ptr<const AbstrStopCriteria> stop_criteria)
 {
     Point x_curr(init);
     double f_curr = (*f)(x_curr);

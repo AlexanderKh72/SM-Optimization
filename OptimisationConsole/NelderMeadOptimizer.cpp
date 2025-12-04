@@ -25,9 +25,9 @@ Point bound_intersection(const Point& x0, const Point& x1, const RectArea& area)
 	return mixture(x0, x1, alpha);
 }
 
-optimResult NelderMeadOptimizer::optimize(const AbstrFunction * f, 
+optimResult NelderMeadOptimizer::optimize(std::shared_ptr<const AbstrFunction> f, 
 	const Point& init,
-	const RectArea& area, const AbstrStopCriteria * stop_criteria)
+	const RectArea& area, std::shared_ptr<const AbstrStopCriteria> stop_criteria)
 {
 	size_t n = f->getDim();
 	std::vector<Point> simplex;

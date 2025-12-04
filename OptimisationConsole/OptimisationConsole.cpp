@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <memory>
+
 #include "AbstrFunction.h"
 #include "NelderMeadOptimizer.h"
 #include "SimpleStochasticOptimizer.h"
@@ -46,30 +48,11 @@ protected:
 
 int main()
 {
-    //SC stopcriteria(0.001);
-    //std::vector<double> l = { -1.5, -1.5 }, r = { 1.5, 1.5 };
-    //RectArea area(l, r);
-    //NelderMeadOptimizer optimizer_NM;
-    //Rosenbrock<2> f;
-    //optimResult res = optimizer_NM.optimize(f, Point(std::vector<double>{0.5, 0.5}), area, stopcriteria, std::vector<double>{1, 0.5, 2});
-    //std::cout << res.tr.N << std::endl;
-    //for (int i = 0; i < res.x.getDim(); ++i) {
-    //    std::cout << res.x.at(i) << " ";
-    //}
-    //std::cout << "\n" << res.f << std::endl;
-
-    //SimpleStochasticOptimizer optimizer_SS;
-    //res = std::move(optimizer_SS.optimize(f, Point(std::vector<double>{0.5, 0.5}), area, stopcriteria, std::vector<double>{0.5, 0.2}));
-    //std::cout << res.tr.N << std::endl;
-    //for (int i = 0; i < res.x.getDim(); ++i) {
-    //    std::cout << res.x.at(i) << " ";
-    //}
-    //std::cout << "\n" << res.f << std::endl;
-        const size_t n = 2;
-    AbstrFunction* f = nullptr;
-    AbstrOptimizer* optimizer = nullptr;
+    const size_t n = 2;
+    std::shared_ptr<AbstrFunction> f;
+    std::shared_ptr<AbstrOptimizer> optimizer;
     std::vector<double> area_left_bound, area_right_bound;
-    AbstrStopCriteria* stopcr = nullptr;
+    std::shared_ptr<AbstrStopCriteria> stopcr;
 
     char c;
     
@@ -79,9 +62,9 @@ int main()
         std::cout << "\nSelect function:\n1 -- Rosenbrock;\n2 -- Sphere function;\n";
         std::cin >> c;
         if (c == '1')
-            f = new (Rosenbrock<n>);
+            f = std::make_shared<Rosenbrock<n>>();
         else if (c == '2')
-            f = new (Sphere<n>);
+            f = std::make_shared<Sphere<n>>();
         else
             std::cout << "Try again.\n";
     }
@@ -138,7 +121,7 @@ int main()
                 std::cin >> gamma;
             }
 
-            optimizer = new NelderMeadOptimizer(alpha, beta, gamma);
+            optimizer = std::make_shared<NelderMeadOptimizer>(alpha, beta, gamma);
         }
         else if (c == '2') {
             double p, delta;
@@ -156,7 +139,7 @@ int main()
                 std::cin >> p;
             }
 
-            optimizer = new SimpleStochasticOptimizer(p, delta);
+            optimizer = std::make_shared<SimpleStochasticOptimizer>(p, delta);
         }
         else
             std::cout << "Try again.\n";
@@ -175,7 +158,7 @@ int main()
     }
     std::cout << "N_max = ";
     std::cin >> N_max;
-    stopcr = new SC(epsilon, N_max);
+    stopcr = std::make_shared<SC>(epsilon, N_max);
 
     optimResult res(optimizer->optimize(f, init, area, stopcr));
     std::cout << "\n----------\n\nResult.\n";
@@ -183,8 +166,4 @@ int main()
     res.x.print();
     std::cout << "\nFunction value: " << res.f << "\n";
     std::cout << "Number of iterations: " << res.tr.N;
-
-    delete optimizer;
-    delete f;
-    delete stopcr;
 }

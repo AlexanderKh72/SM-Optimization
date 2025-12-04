@@ -2,6 +2,8 @@
 #include "AbstrFunction.h"
 #include "RectArea.h"
 #include "Point.h"
+#include <memory>
+
 
 struct trajectory {
 	std::vector<Point> xs;
@@ -48,6 +50,6 @@ public:
 
 class AbstrOptimizer {
 public:
-	virtual optimResult optimize(const AbstrFunction* f, const Point& init,
-		const RectArea& area, const AbstrStopCriteria* stop_criteria) = 0;
+	virtual optimResult optimize(std::shared_ptr<const AbstrFunction> f, const Point& init,
+		const RectArea& area, std::shared_ptr<const AbstrStopCriteria> stop_criteria) = 0;
 };
