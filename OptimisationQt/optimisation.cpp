@@ -23,6 +23,7 @@ Optimisation::Optimisation(QWidget *parent)
     ui->customPlot->addGraph();
     ui->customPlot->setInteractions(QCP::iSelectPlottables);
     connect(ui->customPlot, &QCustomPlot::mousePress, this, &Optimisation::pointSelected);
+    connect(ui->customPlot, &QCustomPlot::mouseMove, this, &Optimisation::calculateFunction);
 }
 
 Optimisation::~Optimisation()
@@ -41,6 +42,15 @@ void Optimisation::ChangeParamLabel() {
     std::ostringstream out;
     out << "Function: " << func->name() << "; Method: " << optimizer->name();
     ui->parametersLabel->setText(QString::fromStdString(out.str()));
+}
+
+void Optimisation::calculateFunction(QMouseEvent* event){
+    double x = ui->customPlot->xAxis->pixelToCoord(event->pos().x());
+    double y = ui->customPlot->yAxis->pixelToCoord(event->pos().y());
+
+    std::ostringstream out;
+    out << "f = " << func->operator()({x, y});
+    ui->valueLabel->setText(QString::fromStdString(out.str()));
 }
 
 void Optimisation::drawContourLine() {

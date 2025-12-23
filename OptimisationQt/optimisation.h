@@ -47,6 +47,7 @@ private slots:
     void setOptimisationParameters();
     void pointSelected(QMouseEvent* event);
     void drawContourLine();
+    void calculateFunction(QMouseEvent* event);
 
 private:
     Ui::Optimisation *ui;
