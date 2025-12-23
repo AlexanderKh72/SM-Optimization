@@ -25,6 +25,15 @@ Optimisation::Optimisation(QWidget *parent)
     ChangeParamLabel();
 
     ui->customPlot->addGraph();
+    ui->customPlot->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->customPlot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, Qt::black, Qt::black, 5));
+    ui->customPlot->graph(0)->setSelectable(QCP::stNone);
+    ui->customPlot->graph(0)->setPen(QPen(Qt::black, 2));
+
+    ui->customPlot->addGraph();
+    ui->customPlot->graph(1)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssStar, Qt::red, 15));
+    ui->customPlot->graph(1)->setPen(QPen(Qt::black, 2));
+
     ui->customPlot->setInteractions(QCP::iSelectPlottables);
     connect(ui->customPlot, &QCustomPlot::mousePress, this, &Optimisation::pointSelected);
     connect(ui->customPlot, &QCustomPlot::mouseMove, this, &Optimisation::calculateFunction);
@@ -32,7 +41,6 @@ Optimisation::Optimisation(QWidget *parent)
 
 Optimisation::~Optimisation()
 {
-    //delete scene;
     delete ui;
 }
 
@@ -85,7 +93,7 @@ void Optimisation::drawContour() {
     for (int i = 0; i < N_CONTOUR; ++i)
         for (int j = 0; j < N_CONTOUR; ++j)
             image.setPixelColor(i, j, palette[std::min<int>(floor((values[i][j] - min_value) / (max_value - min_value) * GRADIENT_LEVELS), GRADIENT_LEVELS - 1)]);
-    ui->customPlot->setBackground(QPixmap::fromImage(image), true);
+    ui->customPlot->setBackground(QPixmap::fromImage(image), true, Qt::IgnoreAspectRatio);
     ui->customPlot->replot();
 }
 
@@ -126,8 +134,10 @@ void Optimisation::pointSelected(QMouseEvent* event) {
         xs.push_back((*iter).at(0));
         ys.push_back((*iter).at(1));
     }
-    ui->customPlot->graph(0)->setData(QVector<double>(xs.begin(), xs.end()), QVector<double>(ys.begin(), ys.end()));
-    ui->customPlot->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
+
+    ui->customPlot->graph(0)->setData(QVector<double>(xs.begin(), xs.end()), QVector<double>(ys.begin(), ys.end()), true);
+    ui->customPlot->graph(1)->setData(QVector<double>({res.x.at(0)}), QVector<double>({res.x.at(1)}));
+
     ui->customPlot->replot();
 
     std::ostringstream out;
