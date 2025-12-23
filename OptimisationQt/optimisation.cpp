@@ -13,7 +13,7 @@ Optimisation::Optimisation(QWidget *parent)
 {
     ui->setupUi(this);
     connect(this, &Optimisation::AreaChanged, this, &Optimisation::ChangeArea);
-    connect(this, &Optimisation::MethodOrFunctionChanged, this, &Optimisation::ChangeParamLabel);
+    connect(this, &Optimisation::AreaChanged, this, &Optimisation::drawContourLine);
 
     setOptimisationParameters();
 
@@ -43,11 +43,43 @@ void Optimisation::ChangeParamLabel() {
     ui->parametersLabel->setText(QString::fromStdString(out.str()));
 }
 
+void Optimisation::drawContourLine() {
+    for (auto item = contour.begin(); item != contour.end(); ++item)
+        delete (*item);
+    contour.clear();
+    if (param.sphere) {
+        double min_radius = std::sqrt(param.lbx * param.lbx + param.lby * param.lby), max_radius = 0;
+        if (param.lbx < 0 && param.lby < 0 && param.rtx > 0 && param.rty > 0)
+            min_radius = 0;
+        else {
+            min_radius = std::min({std::sqrt(param.lbx * param.lbx + param.lby * param.lby),
+                                   std::sqrt(param.rtx * param.rtx + param.lby * param.lby),
+                                   std::sqrt(param.lbx * param.lbx + param.rty * param.rty),
+                                   std::sqrt(param.rtx * param.rtx + param.rty * param.rty)});
+        }
+        max_radius = std::max({std::sqrt(param.lbx * param.lbx + param.lby * param.lby),
+                               std::sqrt(param.rtx * param.rtx + param.lby * param.lby),
+                               std::sqrt(param.lbx * param.lbx + param.rty * param.rty),
+                               std::sqrt(param.rtx * param.rtx + param.rty * param.rty)});
+        for (double r = min_radius; r < max_radius; r = r + (max_radius - min_radius) / 10.0)
+        {
+            contour.push_back(new QCPItemEllipse(ui->customPlot));
+            dynamic_cast<QCPItemEllipse*>(contour.back())->topLeft->setCoords(-r, r);     // Plot coordinates
+            dynamic_cast<QCPItemEllipse*>(contour.back())->bottomRight->setCoords(r, -r); // Plot coordinates
+            dynamic_cast<QCPItemEllipse*>(contour.back())->setPen(QPen(Qt::blue));
+        }
+    }
+    ui->customPlot->replot();
+}
 
 void Optimisation::on_SetMethodButton_clicked()
 {
     Dialog_SetMethod dialog(param, this);
-    QObject::connect(&dialog, &Dialog_SetMethod::optimisationParametersChanged, this, &Optimisation::setOptimisationParameters);
+    connect(&dialog, &Dialog_SetMethod::optimisationParametersChanged, this, &Optimisation::setOptimisationParameters);
+    connect(&dialog, &Dialog_SetMethod::MethodChanged, this, &Optimisation::ChangeParamLabel);
+    connect(&dialog, &Dialog_SetMethod::FunctionChanged, this, &Optimisation::ChangeParamLabel);
+    connect(&dialog, &Dialog_SetMethod::FunctionChanged, this, &Optimisation::drawContourLine);
+
     dialog.exec();
 }
 
@@ -65,7 +97,6 @@ void Optimisation::setOptimisationParameters() {
     if (param.simple_stochastic)
         optimizer = std::make_shared<SimpleStochasticOptimizer>(param.ssp, param.ssdelta);
     stopcr = std::make_shared<SC>(param.scepsilon, param.scN);
-    emit MethodOrFunctionChanged();
 }
 
 void Optimisation::pointSelected(QMouseEvent* event) {

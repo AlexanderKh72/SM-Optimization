@@ -6,6 +6,7 @@
 #include "Optimizers/AbstrOptimizer.h"
 #include "Optimizers/AbstrFunction.h"
 #include "Optimizers/RectArea.h"
+#include "qcustomplot.h"
 
 struct OptimisationParameters {
     bool rosenbrock = true;
@@ -43,10 +44,9 @@ private slots:
     void ChangeArea();
     void ChangeParamLabel();
     void on_SetMethodButton_clicked();
-    void setOptimisationParameters(
-
-    );
+    void setOptimisationParameters();
     void pointSelected(QMouseEvent* event);
+    void drawContourLine();
 
 private:
     Ui::Optimisation *ui;
@@ -55,9 +55,9 @@ private:
     std::shared_ptr<AbstrFunction> func;
     std::shared_ptr<AbstrStopCriteria> stopcr;
     std::shared_ptr<RectArea> area;
+    std::vector<QCPAbstractItem*> contour;
 
 signals:
     void AreaChanged();
-    void MethodOrFunctionChanged();
 };
 #endif // OPTIMISATION_H

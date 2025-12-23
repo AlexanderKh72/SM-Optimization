@@ -34,6 +34,11 @@ Dialog_SetMethod::~Dialog_SetMethod()
 
 void Dialog_SetMethod::on_buttonBox_accepted()
 {
+    bool fc = false, mc = false;
+    if ((param.rosenbrock != ui->RosenbrockButton->isChecked()) || (param.sphere != ui->SphereButton->isChecked()))
+        fc = true;
+    if ((param.nelder_mead != ui->NM_radioButton->isChecked()) || (param.simple_stochastic != ui->SS_radioButton->isChecked()))
+        mc = true;
     param.rosenbrock = ui->RosenbrockButton->isChecked();
     param.sphere = ui->SphereButton->isChecked();
     param.lbx = ui->LeftBottomX_SpinBox->value();
@@ -51,6 +56,10 @@ void Dialog_SetMethod::on_buttonBox_accepted()
     param.scN = ui->SCN_SpinBox->value();
 
     emit optimisationParametersChanged();
+    if (fc)
+        emit FunctionChanged();
+    if (mc)
+        emit MethodChanged();
 }
 
 void Dialog_SetMethod::on_LeftBottomX_SpinBox_valueChanged(double arg1)

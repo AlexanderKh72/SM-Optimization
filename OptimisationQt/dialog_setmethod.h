@@ -33,6 +33,8 @@ private:
 
 signals:
     void optimisationParametersChanged();
+    void MethodChanged();
+    void FunctionChanged();
 };
 
 #endif // DIALOG_SETMETHOD_H

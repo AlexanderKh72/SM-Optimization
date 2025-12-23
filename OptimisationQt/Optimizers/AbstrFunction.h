@@ -12,7 +12,7 @@ public:
     /**< Оператор AbstrFunction::operator() вычисляет значение функции в точке std::vector<double> x. */
 	virtual size_t getDim() const = 0;
     /**< Функция AbstrFunction::getDim возвращает размерность функции, т.е. необходимую длину вектора для вычисления значения. */
-    virtual std::string name() const = 0;
+    virtual std::string name() const { return ""; }
     /**< Функция Abstr::name возвращает имя функции. */
 };
 
