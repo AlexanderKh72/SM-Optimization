@@ -1,0 +1,74 @@
+\doxysection{Класс Simple\+Stochastic\+Optimizer}
+\hypertarget{class_simple_stochastic_optimizer}{}\label{class_simple_stochastic_optimizer}\index{SimpleStochasticOptimizer@{SimpleStochasticOptimizer}}
+
+
+Метод простой стохастичиской оптимизации  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Stochastic\+Optimizer.\+h$>$}
+
+Граф наследования\+:Simple\+Stochastic\+Optimizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_stochastic_optimizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_simple_stochastic_optimizer_a3aba53a5c3c10647a27d075d00b29cab}\label{class_simple_stochastic_optimizer_a3aba53a5c3c10647a27d075d00b29cab} 
+{\bfseries Simple\+Stochastic\+Optimizer} (double p, double delta)
+\item 
+\mbox{\hyperlink{structoptim_result}{optim\+Result}} \mbox{\hyperlink{class_simple_stochastic_optimizer_a70d6a63eb3db39f770ffac9b42a5e286}{optimize}} (std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$ f, const \mbox{\hyperlink{class_point}{Point}} \&init, const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&area, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$ stop\+\_\+criteria) override
+\item 
+std\+::string \mbox{\hyperlink{class_simple_stochastic_optimizer_aad75704fd999ccfa79617055f299d3cc}{name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_simple_stochastic_optimizer_a6eb85032116275a6e566ad0beddac32b}\label{class_simple_stochastic_optimizer_a6eb85032116275a6e566ad0beddac32b} 
+double {\bfseries p}
+\item 
+\Hypertarget{class_simple_stochastic_optimizer_a483df952a086bde32af18a61d5bd1247}\label{class_simple_stochastic_optimizer_a483df952a086bde32af18a61d5bd1247} 
+double {\bfseries delta}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Метод простой стохастичиской оптимизации 
+
+\doxylink{class_simple_stochastic_optimizer}{Simple\+Stochastic\+Optimizer} --- класс, реализующий метод простого стохастического поиска минимума функции. 
+
+\label{doc-func-members}
+\Hypertarget{class_simple_stochastic_optimizer_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_simple_stochastic_optimizer_aad75704fd999ccfa79617055f299d3cc}\index{SimpleStochasticOptimizer@{SimpleStochasticOptimizer}!name@{name}}
+\index{name@{name}!SimpleStochasticOptimizer@{SimpleStochasticOptimizer}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_simple_stochastic_optimizer_aad75704fd999ccfa79617055f299d3cc} 
+std\+::string Simple\+Stochastic\+Optimizer\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{Abstr\+Optimizer\+::name} возвращает название метода оптимизации. 
+
+Замещает \mbox{\hyperlink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{Abstr\+Optimizer}}.
+
+\Hypertarget{class_simple_stochastic_optimizer_a70d6a63eb3db39f770ffac9b42a5e286}\index{SimpleStochasticOptimizer@{SimpleStochasticOptimizer}!optimize@{optimize}}
+\index{optimize@{optimize}!SimpleStochasticOptimizer@{SimpleStochasticOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily \label{class_simple_stochastic_optimizer_a70d6a63eb3db39f770ffac9b42a5e286} 
+\mbox{\hyperlink{structoptim_result}{optim\+Result}} Simple\+Stochastic\+Optimizer\+::optimize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$}]{f}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{init}{, }\item[{const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&}]{area}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$}]{stop\+\_\+criteria}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{Abstr\+Optimizer\+::optimize} принимает на вход указатель на функцию типа std\+::shared\+\_\+ptr$<$const Abstr\+Function$>$, начальное приближение типа \doxylink{class_point}{Point}, прямоугольную область, в которой ведётся поиск минимума, типа \doxylink{class_rect_area}{Rect\+Area}, укащатель на критерий остановки типа std\+::shared\+\_\+ptr$<$const Abstr\+Stop\+Criteria$>$.
+
+Возвращает результат работы метода в переменной типа \doxylink{structoptim_result}{optim\+Result}. 
+
+Замещает \mbox{\hyperlink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{Abstr\+Optimizer}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Simple\+Stochastic\+Optimizer.\+h\item 
+Simple\+Stochastic\+Optimizer.\+cpp\end{DoxyCompactItemize}

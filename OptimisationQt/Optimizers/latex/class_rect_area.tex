@@ -1,0 +1,88 @@
+\doxysection{Класс Rect\+Area}
+\hypertarget{class_rect_area}{}\label{class_rect_area}\index{RectArea@{RectArea}}
+
+
+Прямоугольная область  
+
+
+
+
+{\ttfamily \#include $<$Rect\+Area.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rect_area_ade691cedee0057f70d191b69bd855876}{Rect\+Area}} (const std\+::vector$<$ double $>$ \&l, const std\+::vector$<$ double $>$ \&r)
+\item 
+\mbox{\hyperlink{class_rect_area_ab0f80f84f6041de25f7425f54fb98a59}{Rect\+Area}} (double x1=0, double y1=0, double x2=1, double y2=1)
+\item 
+\Hypertarget{class_rect_area_ac63c63f41cb33453f1380ac51b309076}\label{class_rect_area_ac63c63f41cb33453f1380ac51b309076} 
+size\+\_\+t {\bfseries get\+Dim} () const
+\item 
+double \mbox{\hyperlink{class_rect_area_a7c57ca4dff460c1413aab25aed31689d}{get\+\_\+l}} (size\+\_\+t i) const
+\item 
+double \mbox{\hyperlink{class_rect_area_ac1f104115df996ded84d9aadb2ad7127}{get\+\_\+r}} (size\+\_\+t i) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\+\_\+bound}}
+\item 
+\Hypertarget{class_rect_area_a605d5574c80c5b10a6b53225e8d55ed9}\label{class_rect_area_a605d5574c80c5b10a6b53225e8d55ed9} 
+const \mbox{\hyperlink{class_point}{Point}} {\bfseries right\+\_\+bound}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Прямоугольная область 
+
+\doxylink{class_rect_area}{Rect\+Area} --- класс, релизующий параллелепипедную область в многомерном пространстве (коробка). 
+
+\label{doc-constructors}
+\Hypertarget{class_rect_area_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_rect_area_ade691cedee0057f70d191b69bd855876}\index{RectArea@{RectArea}!RectArea@{RectArea}}
+\index{RectArea@{RectArea}!RectArea@{RectArea}}
+\doxysubsubsection{\texorpdfstring{RectArea()}{RectArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_rect_area_ade691cedee0057f70d191b69bd855876} 
+Rect\+Area\+::\+Rect\+Area (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{l}{, }\item[{const std\+::vector$<$ double $>$ \&}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор принимающий на вход const std\+::vector$<$double$>$\& l --- левые границы по каждой координате для точек области, const std\+::vector$<$double$>$\& r --- соответственно, правые границы по каждой координате для точек области. \Hypertarget{class_rect_area_ab0f80f84f6041de25f7425f54fb98a59}\index{RectArea@{RectArea}!RectArea@{RectArea}}
+\index{RectArea@{RectArea}!RectArea@{RectArea}}
+\doxysubsubsection{\texorpdfstring{RectArea()}{RectArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_rect_area_ab0f80f84f6041de25f7425f54fb98a59} 
+Rect\+Area\+::\+Rect\+Area (\begin{DoxyParamCaption}\item[{double}]{x1}{ = {\ttfamily 0}, }\item[{double}]{y1}{ = {\ttfamily 0}, }\item[{double}]{x2}{ = {\ttfamily 1}, }\item[{double}]{y2}{ = {\ttfamily 1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Конструктор принимающий на вход четыре числа x1, y1, x2, y2 и создающий прямоугольную область \mbox{[}x1, x2\mbox{]} x \mbox{[}y1, y2\mbox{]}. 
+
+\label{doc-func-members}
+\Hypertarget{class_rect_area_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_rect_area_a7c57ca4dff460c1413aab25aed31689d}\index{RectArea@{RectArea}!get\_l@{get\_l}}
+\index{get\_l@{get\_l}!RectArea@{RectArea}}
+\doxysubsubsection{\texorpdfstring{get\_l()}{get\_l()}}
+{\footnotesize\ttfamily \label{class_rect_area_a7c57ca4dff460c1413aab25aed31689d} 
+double Rect\+Area\+::get\+\_\+l (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Функция Rect\+Area\+::get\+Dim возвращает размерность пространства, в котором лежит область. \Hypertarget{class_rect_area_ac1f104115df996ded84d9aadb2ad7127}\index{RectArea@{RectArea}!get\_r@{get\_r}}
+\index{get\_r@{get\_r}!RectArea@{RectArea}}
+\doxysubsubsection{\texorpdfstring{get\_r()}{get\_r()}}
+{\footnotesize\ttfamily \label{class_rect_area_ac1f104115df996ded84d9aadb2ad7127} 
+double Rect\+Area\+::get\+\_\+r (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Функция \doxylink{class_rect_area_a7c57ca4dff460c1413aab25aed31689d}{Rect\+Area\+::get\+\_\+l} возвращает левую границу для i-\/ой координаты точки в области. 
+
+\label{doc-variable-members}
+\Hypertarget{class_rect_area_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}\index{RectArea@{RectArea}!left\_bound@{left\_bound}}
+\index{left\_bound@{left\_bound}!RectArea@{RectArea}}
+\doxysubsubsection{\texorpdfstring{left\_bound}{left\_bound}}
+{\footnotesize\ttfamily \label{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c} 
+const \mbox{\hyperlink{class_point}{Point}} Rect\+Area\+::left\+\_\+bound\hspace{0.3cm}{\ttfamily [protected]}}
+
+Функция \doxylink{class_rect_area_ac1f104115df996ded84d9aadb2ad7127}{Rect\+Area\+::get\+\_\+r} возвращает правую границу для i-\/ой координаты точки в области. 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Rect\+Area.\+h\end{DoxyCompactItemize}

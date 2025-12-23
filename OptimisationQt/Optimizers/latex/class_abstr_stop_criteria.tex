@@ -1,0 +1,47 @@
+\doxysection{Класс Abstr\+Stop\+Criteria}
+\hypertarget{class_abstr_stop_criteria}{}\label{class_abstr_stop_criteria}\index{AbstrStopCriteria@{AbstrStopCriteria}}
+
+
+Критерий остановки  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Optimizer.\+h$>$}
+
+Граф наследования\+:Abstr\+Stop\+Criteria\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstr_stop_criteria}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_abstr_stop_criteria_af2a8a672a7043f675caf88319eb1ced9}{Is\+Satisfied}} (const \mbox{\hyperlink{structtrajectory}{trajectory}} \&t) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Критерий остановки 
+
+\doxylink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria} --- абстрактный класс? реализующий критерий остановки оптимизатора. 
+
+\label{doc-func-members}
+\Hypertarget{class_abstr_stop_criteria_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_abstr_stop_criteria_af2a8a672a7043f675caf88319eb1ced9}\index{AbstrStopCriteria@{AbstrStopCriteria}!IsSatisfied@{IsSatisfied}}
+\index{IsSatisfied@{IsSatisfied}!AbstrStopCriteria@{AbstrStopCriteria}}
+\doxysubsubsection{\texorpdfstring{IsSatisfied()}{IsSatisfied()}}
+{\footnotesize\ttfamily \label{class_abstr_stop_criteria_af2a8a672a7043f675caf88319eb1ced9} 
+virtual bool Abstr\+Stop\+Criteria\+::\+Is\+Satisfied (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtrajectory}{trajectory}} \&}]{t}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Функция \doxylink{class_abstr_stop_criteria_af2a8a672a7043f675caf88319eb1ced9}{Abstr\+Stop\+Criteria\+::\+Is\+Satisfied} принимает на вход траекторию работы оптимизатора типа trajectory и возвращает true если критерий удовлетворён и false --- иначе. 
+
+Замещается в \mbox{\hyperlink{class_s_c_a4b78fdc0aaf9b7e6b96116a20d755d43}{SC}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Optimizer.\+h\end{DoxyCompactItemize}

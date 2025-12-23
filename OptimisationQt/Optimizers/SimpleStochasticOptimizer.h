@@ -2,6 +2,10 @@
 #include <memory>
 #include "AbstrOptimizer.h"
 
+/// Метод простой стохастичиской оптимизации
+/**
+ * @brief SimpleStochasticOptimizer --- класс, реализующий метод простого стохастического поиска минимума функции.
+ */
 class SimpleStochasticOptimizer : public AbstrOptimizer {
 public:
 	SimpleStochasticOptimizer(double p, double delta) : p(p), delta(delta) {}

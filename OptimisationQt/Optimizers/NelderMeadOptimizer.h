@@ -2,6 +2,10 @@
 #include <memory>
 #include "AbstrOptimizer.h"
 
+/// Метод Nelder-Mead
+/**
+ * @brief NelderMeadOptimizer --- класс, реализующий метод деформируемых многогранников Нелдера-Мида для поиска минимума функции.
+ */
 class NelderMeadOptimizer : public AbstrOptimizer {
 public:
 	NelderMeadOptimizer(double alpha, double beta, double gamma) : alpha(alpha), beta(beta), gamma(gamma) {}

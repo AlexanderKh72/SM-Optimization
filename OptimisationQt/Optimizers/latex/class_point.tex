@@ -1,0 +1,77 @@
+\doxysection{Класс Point}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+
+
+Точка в многомерном пространстве.  
+
+
+
+
+{\ttfamily \#include $<$Point.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_a360c733ed6c9eb90edc22ce5a07be594}{Point}} (const std\+::vector$<$ double $>$ \&x)
+\item 
+\Hypertarget{class_point_af6ec88f9dcdb89bd70c5b20065da06bf}\label{class_point_af6ec88f9dcdb89bd70c5b20065da06bf} 
+{\bfseries Point} (const \mbox{\hyperlink{class_point}{Point}} \&other)
+\item 
+\Hypertarget{class_point_a52da1130dc740f8d11ac6f5b42db2a1c}\label{class_point_a52da1130dc740f8d11ac6f5b42db2a1c} 
+{\bfseries Point} (\mbox{\hyperlink{class_point}{Point}} \&\&other)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_point_ac059bafe59a73b2a004a5f13c1ec6a68}{get\+Dim}} () const
+\item 
+\Hypertarget{class_point_afbace8c40e1be384358cc8fc625df4da}\label{class_point_afbace8c40e1be384358cc8fc625df4da} 
+\mbox{\hyperlink{class_point}{Point}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_point}{Point}} \&other)
+\item 
+\Hypertarget{class_point_aa6d79013765d3f0133b58dfa3a442186}\label{class_point_aa6d79013765d3f0133b58dfa3a442186} 
+\mbox{\hyperlink{class_point}{Point}} \& {\bfseries operator=} (\mbox{\hyperlink{class_point}{Point}} \&\&other)
+\item 
+double \mbox{\hyperlink{class_point_a92f80920c078157b3c42669c79e09bb5}{at}} (size\+\_\+t i) const
+\item 
+\Hypertarget{class_point_a350f8155835b0dfe0e2cf3228b2e9b7d}\label{class_point_a350f8155835b0dfe0e2cf3228b2e9b7d} 
+{\bfseries operator std\+::vector$<$ double $>$} () const
+\item 
+\Hypertarget{class_point_ae1b141ad286025fc7b4183cc27ef8c0d}\label{class_point_ae1b141ad286025fc7b4183cc27ef8c0d} 
+void {\bfseries print} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Точка в многомерном пространстве. 
+
+\doxylink{class_point}{Point} --- класс, реализующий точку в многомерном пространстве. 
+
+\label{doc-constructors}
+\Hypertarget{class_point_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_point_a360c733ed6c9eb90edc22ce5a07be594}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily \label{class_point_a360c733ed6c9eb90edc22ce5a07be594} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор принимающий на вход координаты точки const std\+::vector$<$double$>$\& x. 
+
+\label{doc-func-members}
+\Hypertarget{class_point_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_point_a92f80920c078157b3c42669c79e09bb5}\index{Point@{Point}!at@{at}}
+\index{at@{at}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \label{class_point_a92f80920c078157b3c42669c79e09bb5} 
+double Point\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Функция \doxylink{class_point_a92f80920c078157b3c42669c79e09bb5}{Point\+::at} возвращает i-\/ую координату точки. \Hypertarget{class_point_ac059bafe59a73b2a004a5f13c1ec6a68}\index{Point@{Point}!getDim@{getDim}}
+\index{getDim@{getDim}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{getDim()}{getDim()}}
+{\footnotesize\ttfamily \label{class_point_ac059bafe59a73b2a004a5f13c1ec6a68} 
+size\+\_\+t Point\+::get\+Dim (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Функция \doxylink{class_point_ac059bafe59a73b2a004a5f13c1ec6a68}{Point\+::get\+Dim} возвращает размерность пространства, в котором лежит точка. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Point.\+h\item 
+Point.\+cpp\end{DoxyCompactItemize}

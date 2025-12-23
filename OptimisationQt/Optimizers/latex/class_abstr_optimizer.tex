@@ -1,0 +1,61 @@
+\doxysection{Класс Abstr\+Optimizer}
+\hypertarget{class_abstr_optimizer}{}\label{class_abstr_optimizer}\index{AbstrOptimizer@{AbstrOptimizer}}
+
+
+Оптимизатор  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Optimizer.\+h$>$}
+
+Граф наследования\+:Abstr\+Optimizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstr_optimizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structoptim_result}{optim\+Result}} \mbox{\hyperlink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{optimize}} (std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$ f, const \mbox{\hyperlink{class_point}{Point}} \&init, const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&area, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$ stop\+\_\+criteria)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{name}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Оптимизатор 
+
+\doxylink{class_abstr_optimizer}{Abstr\+Optimizer} --- абстрактный класс, реализующий оптимизатор. 
+
+\label{doc-func-members}
+\Hypertarget{class_abstr_optimizer_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}\index{AbstrOptimizer@{AbstrOptimizer}!name@{name}}
+\index{name@{name}!AbstrOptimizer@{AbstrOptimizer}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6} 
+virtual std\+::string Abstr\+Optimizer\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{Abstr\+Optimizer\+::name} возвращает название метода оптимизации. 
+
+Замещается в \mbox{\hyperlink{class_nelder_mead_optimizer_ad145907c1e6d987e482c717c02de0307}{Nelder\+Mead\+Optimizer}} и \mbox{\hyperlink{class_simple_stochastic_optimizer_aad75704fd999ccfa79617055f299d3cc}{Simple\+Stochastic\+Optimizer}}.
+
+\Hypertarget{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}\index{AbstrOptimizer@{AbstrOptimizer}!optimize@{optimize}}
+\index{optimize@{optimize}!AbstrOptimizer@{AbstrOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily \label{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae} 
+virtual \mbox{\hyperlink{structoptim_result}{optim\+Result}} Abstr\+Optimizer\+::optimize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$}]{f}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{init}{, }\item[{const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&}]{area}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$}]{stop\+\_\+criteria}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{Abstr\+Optimizer\+::optimize} принимает на вход указатель на функцию типа std\+::shared\+\_\+ptr$<$const Abstr\+Function$>$, начальное приближение типа \doxylink{class_point}{Point}, прямоугольную область, в которой ведётся поиск минимума, типа \doxylink{class_rect_area}{Rect\+Area}, укащатель на критерий остановки типа std\+::shared\+\_\+ptr$<$const Abstr\+Stop\+Criteria$>$.
+
+Возвращает результат работы метода в переменной типа \doxylink{structoptim_result}{optim\+Result}. 
+
+Замещается в \mbox{\hyperlink{class_nelder_mead_optimizer_abde69ba983bdd5d261e78140f166dc99}{Nelder\+Mead\+Optimizer}} и \mbox{\hyperlink{class_simple_stochastic_optimizer_a70d6a63eb3db39f770ffac9b42a5e286}{Simple\+Stochastic\+Optimizer}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Optimizer.\+h\end{DoxyCompactItemize}

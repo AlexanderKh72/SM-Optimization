@@ -1,0 +1,50 @@
+\doxysection{Abstr\+Function.\+h}
+\hypertarget{_abstr_function_8h_source}{}\label{_abstr_function_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstr_function}{AbstrFunction}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstr_function_af06f236851e8983df0ba8d74c87e5f1d}{operator()}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}{getDim}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_abstr_function_a9ed327aa3dd9b8d876ca48cc354482c7}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{template}<\textcolor{keywordtype}{size\_t}\ n\ =\ 2>}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rosenbrock}{Rosenbrock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstr_function}{AbstrFunction}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_rosenbrock_a78fce1c39290a20274c798f6a3cf1cb6}{getDim}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ n;\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rosenbrock_ad00ec9c95cde50dd4f6a6d298709650c}{operator()}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ n\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ 100\ *\ (x[i\ +\ 1]\ -\/\ x[i]\ *\ x[i])\ *\ (x[i\ +\ 1]\ -\/\ x[i]\ *\ x[i])\ +\ (1\ -\/\ x[i])\ *\ (1\ -\/\ x[i]);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{class_rosenbrock_afa28c938e92ae415df6443a11ff5d8f8}{name}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Rosenbrock"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}<\textcolor{keywordtype}{size\_t}\ n\ =\ 2>}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sphere}{Sphere}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstr_function}{AbstrFunction}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_sphere_a5b88e6a28d4ffce9b8bb95e809a2b5ad}{getDim}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ n;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sphere_a7862940d0ca0f2a52ec345266cc2ed4f}{operator()}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ x.at(i)\ *\ x.at(i);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ \mbox{\hyperlink{class_sphere_a3681e51238f378c7da58cde118072b43}{name}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Sphere"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \};}
+
+\end{DoxyCode}

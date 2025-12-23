@@ -1,0 +1,65 @@
+\doxysection{Структура trajectory}
+\hypertarget{structtrajectory}{}\label{structtrajectory}\index{trajectory@{trajectory}}
+
+
+Траектория оптимизации  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Optimizer.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtrajectory_a5bac3cc3544fc196fea5e2a0558f7996}\label{structtrajectory_a5bac3cc3544fc196fea5e2a0558f7996} 
+{\bfseries trajectory} (\mbox{\hyperlink{structtrajectory}{trajectory}} \&\&other) noexcept
+\item 
+\Hypertarget{structtrajectory_a809e34968cd639577df05978133defa8}\label{structtrajectory_a809e34968cd639577df05978133defa8} 
+{\bfseries trajectory} (const \mbox{\hyperlink{structtrajectory}{trajectory}} \&other)
+\item 
+\Hypertarget{structtrajectory_a9c5aac18d6765c8f4c308564c0806eab}\label{structtrajectory_a9c5aac18d6765c8f4c308564c0806eab} 
+\mbox{\hyperlink{structtrajectory}{trajectory}} {\bfseries operator=} (\mbox{\hyperlink{structtrajectory}{trajectory}} \&\&other) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Траектория оптимизации 
+
+trajectory --- структура, хранящая последовательность (std\+::vector) точек типа \doxylink{class_point}{Point}, значений функции в этих точках и число итераций оптимизатора. 
+
+\label{doc-variable-members}
+\Hypertarget{structtrajectory_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}\index{trajectory@{trajectory}!fs@{fs}}
+\index{fs@{fs}!trajectory@{trajectory}}
+\doxysubsubsection{\texorpdfstring{fs}{fs}}
+{\footnotesize\ttfamily \label{structtrajectory_a47709d486e3bb31305736ba259bcaf1f} 
+std\+::vector$<$double$>$ trajectory\+::fs}
+
+\doxylink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{trajectory\+::fs} --- последовательность типа std\+::vector$<$double$>$, элементы которой --- значения функции в точках из \doxylink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{trajectory\+::xs}. \Hypertarget{structtrajectory_a968eded4b7c781933d0cdac29ee93899}\index{trajectory@{trajectory}!N@{N}}
+\index{N@{N}!trajectory@{trajectory}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{structtrajectory_a968eded4b7c781933d0cdac29ee93899} 
+size\+\_\+t trajectory\+::N}
+
+\doxylink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{trajectory\+::N} --- число итераций. \Hypertarget{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}\index{trajectory@{trajectory}!xs@{xs}}
+\index{xs@{xs}!trajectory@{trajectory}}
+\doxysubsubsection{\texorpdfstring{xs}{xs}}
+{\footnotesize\ttfamily \label{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5} 
+std\+::vector$<$\mbox{\hyperlink{class_point}{Point}}$>$ trajectory\+::xs}
+
+\doxylink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{trajectory\+::xs} --- последовательность типа std\+::vector$<$\+Point$>$, элементы которой --- точки посчитанные на кажом шаге итерации оптимизатора. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Optimizer.\+h\end{DoxyCompactItemize}

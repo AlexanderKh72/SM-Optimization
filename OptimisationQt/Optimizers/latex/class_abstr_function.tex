@@ -1,0 +1,71 @@
+\doxysection{Класс Abstr\+Function}
+\hypertarget{class_abstr_function}{}\label{class_abstr_function}\index{AbstrFunction@{AbstrFunction}}
+
+
+Математическая функция  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Function.\+h$>$}
+
+Граф наследования\+:Abstr\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstr_function}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_abstr_function_af06f236851e8983df0ba8d74c87e5f1d}{operator()}} (const std\+::vector$<$ double $>$ \&x) const =0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}{get\+Dim}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{class_abstr_function_a9ed327aa3dd9b8d876ca48cc354482c7}{name}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Математическая функция 
+
+\doxylink{class_abstr_function}{Abstr\+Function} --- абстрактный класс позволяющий вычислять значение многомерной числовой функции. 
+
+\label{doc-func-members}
+\Hypertarget{class_abstr_function_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}\index{AbstrFunction@{AbstrFunction}!getDim@{getDim}}
+\index{getDim@{getDim}!AbstrFunction@{AbstrFunction}}
+\doxysubsubsection{\texorpdfstring{getDim()}{getDim()}}
+{\footnotesize\ttfamily \label{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41} 
+virtual size\+\_\+t Abstr\+Function\+::get\+Dim (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Функция \doxylink{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}{Abstr\+Function\+::get\+Dim} возвращает размерность функции, т.\+е. необходимую длину вектора для вычисления значения. 
+
+Замещается в \mbox{\hyperlink{class_rosenbrock_a78fce1c39290a20274c798f6a3cf1cb6}{Rosenbrock$<$ n $>$}} и \mbox{\hyperlink{class_sphere_a5b88e6a28d4ffce9b8bb95e809a2b5ad}{Sphere$<$ n $>$}}.
+
+\Hypertarget{class_abstr_function_a9ed327aa3dd9b8d876ca48cc354482c7}\index{AbstrFunction@{AbstrFunction}!name@{name}}
+\index{name@{name}!AbstrFunction@{AbstrFunction}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_abstr_function_a9ed327aa3dd9b8d876ca48cc354482c7} 
+virtual std\+::string Abstr\+Function\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Функция Abstr\+::name возвращает имя функции. 
+
+Замещается в \mbox{\hyperlink{class_rosenbrock_afa28c938e92ae415df6443a11ff5d8f8}{Rosenbrock$<$ n $>$}} и \mbox{\hyperlink{class_sphere_a3681e51238f378c7da58cde118072b43}{Sphere$<$ n $>$}}.
+
+\Hypertarget{class_abstr_function_af06f236851e8983df0ba8d74c87e5f1d}\index{AbstrFunction@{AbstrFunction}!operator()@{operator()}}
+\index{operator()@{operator()}!AbstrFunction@{AbstrFunction}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{class_abstr_function_af06f236851e8983df0ba8d74c87e5f1d} 
+virtual double Abstr\+Function\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Оператор Abstr\+Function\+::operator() вычисляет значение функции в точке std\+::vector$<$double$>$ x. 
+
+Замещается в \mbox{\hyperlink{class_rosenbrock_ad00ec9c95cde50dd4f6a6d298709650c}{Rosenbrock$<$ n $>$}} и \mbox{\hyperlink{class_sphere_a7862940d0ca0f2a52ec345266cc2ed4f}{Sphere$<$ n $>$}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Function.\+h\end{DoxyCompactItemize}

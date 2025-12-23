@@ -1,0 +1,65 @@
+\doxysection{Класс Nelder\+Mead\+Optimizer}
+\hypertarget{class_nelder_mead_optimizer}{}\label{class_nelder_mead_optimizer}\index{NelderMeadOptimizer@{NelderMeadOptimizer}}
+
+
+Метод Nelder-\/\+Mead.  
+
+
+
+
+{\ttfamily \#include $<$Nelder\+Mead\+Optimizer.\+h$>$}
+
+Граф наследования\+:Nelder\+Mead\+Optimizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nelder_mead_optimizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_nelder_mead_optimizer_a595e15d831aec11d7dd8a1e9b95a0113}\label{class_nelder_mead_optimizer_a595e15d831aec11d7dd8a1e9b95a0113} 
+{\bfseries Nelder\+Mead\+Optimizer} (double alpha, double beta, double gamma)
+\item 
+\mbox{\hyperlink{structoptim_result}{optim\+Result}} \mbox{\hyperlink{class_nelder_mead_optimizer_abde69ba983bdd5d261e78140f166dc99}{optimize}} (std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$ f, const \mbox{\hyperlink{class_point}{Point}} \&init, const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&area, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$ stop\+\_\+criteria) override
+\item 
+std\+::string \mbox{\hyperlink{class_nelder_mead_optimizer_ad145907c1e6d987e482c717c02de0307}{name}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Метод Nelder-\/\+Mead. 
+
+\doxylink{class_nelder_mead_optimizer}{Nelder\+Mead\+Optimizer} --- класс, реализующий метод деформируемых многогранников Нелдера-\/Мида для поиска минимума функции. 
+
+\label{doc-func-members}
+\Hypertarget{class_nelder_mead_optimizer_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_nelder_mead_optimizer_ad145907c1e6d987e482c717c02de0307}\index{NelderMeadOptimizer@{NelderMeadOptimizer}!name@{name}}
+\index{name@{name}!NelderMeadOptimizer@{NelderMeadOptimizer}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_nelder_mead_optimizer_ad145907c1e6d987e482c717c02de0307} 
+std\+::string Nelder\+Mead\+Optimizer\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{Abstr\+Optimizer\+::name} возвращает название метода оптимизации. 
+
+Замещает \mbox{\hyperlink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{Abstr\+Optimizer}}.
+
+\Hypertarget{class_nelder_mead_optimizer_abde69ba983bdd5d261e78140f166dc99}\index{NelderMeadOptimizer@{NelderMeadOptimizer}!optimize@{optimize}}
+\index{optimize@{optimize}!NelderMeadOptimizer@{NelderMeadOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily \label{class_nelder_mead_optimizer_abde69ba983bdd5d261e78140f166dc99} 
+\mbox{\hyperlink{structoptim_result}{optim\+Result}} Nelder\+Mead\+Optimizer\+::optimize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_function}{Abstr\+Function}} $>$}]{f}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{init}{, }\item[{const \mbox{\hyperlink{class_rect_area}{Rect\+Area}} \&}]{area}{, }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{class_abstr_stop_criteria}{Abstr\+Stop\+Criteria}} $>$}]{stop\+\_\+criteria}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция \doxylink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{Abstr\+Optimizer\+::optimize} принимает на вход указатель на функцию типа std\+::shared\+\_\+ptr$<$const Abstr\+Function$>$, начальное приближение типа \doxylink{class_point}{Point}, прямоугольную область, в которой ведётся поиск минимума, типа \doxylink{class_rect_area}{Rect\+Area}, укащатель на критерий остановки типа std\+::shared\+\_\+ptr$<$const Abstr\+Stop\+Criteria$>$.
+
+Возвращает результат работы метода в переменной типа \doxylink{structoptim_result}{optim\+Result}. 
+
+Замещает \mbox{\hyperlink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{Abstr\+Optimizer}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Nelder\+Mead\+Optimizer.\+h\item 
+Nelder\+Mead\+Optimizer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\doxysection{Abstr\+Optimizer.\+h}
+\hypertarget{_abstr_optimizer_8h_source}{}\label{_abstr_optimizer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}AbstrFunction.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}RectArea.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Point.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }trajectory\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<Point>\ \mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}};}
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ trajectory()\ :\ \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}(0)\ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structtrajectory}{trajectory}}(\mbox{\hyperlink{structtrajectory}{trajectory}}\&\&\ other)\ noexcept\ :\ \mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}}(std::move(other.xs)),\ \mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}(std::move(other.fs)),\ \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}(other.N)\ \{\}}
+\DoxyCodeLine{00023\ \ \ \ \ trajectory(\textcolor{keyword}{const}\ trajectory\&\ other)\ :\ \mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}}(other.\mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}}),\ \mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}(other.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}),\ \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}(other.\mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}})\ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ trajectory\ operator=(trajectory\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtrajectory_a071d854245eb021a18fa5f4cbbeba5a5}{xs}}\ =\ std::move(other.xs);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}\ =\ std::move(other.fs);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}\ =\ other.N;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{struct\ }optimResult\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structtrajectory}{trajectory}}\ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ optimResult(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtrajectory}{trajectory}}\&\ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}})\ :\ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}(\mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}),\ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}(\mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}),\ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}}(\mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}})\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structoptim_result}{optimResult}}(\mbox{\hyperlink{structoptim_result}{optimResult}}\&\&\ other)\ noexcept\ :\ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}(std::move(other.x)),\ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}(other.f),\ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}}(std::move(other.tr))\ \{\}}
+\DoxyCodeLine{00049\ \ \ \ \ optimResult(\textcolor{keyword}{const}\ optimResult\&\ other)\ :\ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}(other.\mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}),\ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}(other.\mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}),\ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}}(other.\mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}})\ \ \{\}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ optimResult\ operator=(optimResult\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}\ =\ std::move(other.x);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}\ =\ other.f;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}}\ =\ std::move(other.tr);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstr_stop_criteria}{AbstrStopCriteria}}\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_abstr_stop_criteria_af2a8a672a7043f675caf88319eb1ced9}{IsSatisfied}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtrajectory}{trajectory}}\&\ t)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_c_abc5a7f5912ce469c1456f4eda7109334}{SC}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstr_stop_criteria}{AbstrStopCriteria}}\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_s_c_abc5a7f5912ce469c1456f4eda7109334}{SC}}(\textcolor{keywordtype}{double}\ epsilon,\ \textcolor{keywordtype}{size\_t}\ N)\ :\ epsilon(epsilon),\ N\_max(N)\ \{\}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_c_a4b78fdc0aaf9b7e6b96116a20d755d43}{IsSatisfied}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtrajectory}{trajectory}}\&\ t)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (t.\mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}\ >\ 1\ \&\&\ t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.size()\ >\ 1)\ \&\&\ (std::abs((t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.at(t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.size()\ -\/\ 1)\ -\/\ t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.at(t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.size()\ -\/\ 2))\ /\ t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.at(t.\mbox{\hyperlink{structtrajectory_a47709d486e3bb31305736ba259bcaf1f}{fs}}.size()\ -\/\ 1))\ <\ epsilon)\ ||\ (t.\mbox{\hyperlink{structtrajectory_a968eded4b7c781933d0cdac29ee93899}{N}}\ >\ N\_max);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{double}\ epsilon;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\_max;}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstr_optimizer}{AbstrOptimizer}}\ \{}
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structoptim_result}{optimResult}}\ \mbox{\hyperlink{class_abstr_optimizer_a6ae7f9ce657e3b52d95e1d03a3bfc2ae}{optimize}}(std::shared\_ptr<const\ AbstrFunction>\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ init,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_rect_area}{RectArea}}\&\ area,\ std::shared\_ptr<const\ AbstrStopCriteria>\ stop\_criteria)\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_abstr_optimizer_a0de1f32ccb8f281193b9b1ccc6293ae6}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00111\ \};}
+
+\end{DoxyCode}

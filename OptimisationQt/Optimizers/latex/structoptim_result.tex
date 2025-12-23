@@ -1,0 +1,68 @@
+\doxysection{Структура optim\+Result}
+\hypertarget{structoptim_result}{}\label{structoptim_result}\index{optimResult@{optimResult}}
+
+
+Результат работы оптимизатора.  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Optimizer.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structoptim_result_a27d92b2182dd812fb335a2038681547f}\label{structoptim_result_a27d92b2182dd812fb335a2038681547f} 
+{\bfseries optim\+Result} (const \mbox{\hyperlink{class_point}{Point}} \&\mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}, double \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}, const \mbox{\hyperlink{structtrajectory}{trajectory}} \&\mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}})
+\item 
+\Hypertarget{structoptim_result_a8db4db4d2468d019f41c9584b6ed2bda}\label{structoptim_result_a8db4db4d2468d019f41c9584b6ed2bda} 
+{\bfseries optim\+Result} (\mbox{\hyperlink{structoptim_result}{optim\+Result}} \&\&other) noexcept
+\item 
+\Hypertarget{structoptim_result_a8e729808f37065e5b0ee01744e25df93}\label{structoptim_result_a8e729808f37065e5b0ee01744e25df93} 
+{\bfseries optim\+Result} (const \mbox{\hyperlink{structoptim_result}{optim\+Result}} \&other)
+\item 
+\Hypertarget{structoptim_result_acda02f645b5bf87ec513c316a6fbf672}\label{structoptim_result_acda02f645b5bf87ec513c316a6fbf672} 
+\mbox{\hyperlink{structoptim_result}{optim\+Result}} {\bfseries operator=} (\mbox{\hyperlink{structoptim_result}{optim\+Result}} \&\&other) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{x}}
+\item 
+double \mbox{\hyperlink{structoptim_result_a458106cf0dafe5823914c46810530545}{f}}
+\item 
+\mbox{\hyperlink{structtrajectory}{trajectory}} \mbox{\hyperlink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{tr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Результат работы оптимизатора. 
+
+\doxylink{structoptim_result}{optim\+Result} --- структура хранящая точку, найденную в результате работы оптимизатора, значение функции в этой точке и траекторию работы оптимизатора 
+
+\label{doc-variable-members}
+\Hypertarget{structoptim_result_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{structoptim_result_a458106cf0dafe5823914c46810530545}\index{optimResult@{optimResult}!f@{f}}
+\index{f@{f}!optimResult@{optimResult}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \label{structoptim_result_a458106cf0dafe5823914c46810530545} 
+double optim\+Result\+::f}
+
+\doxylink{structoptim_result_a458106cf0dafe5823914c46810530545}{optim\+Result\+::f} --- значение функции в точке \doxylink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{optim\+Result\+::x}. \Hypertarget{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}\index{optimResult@{optimResult}!tr@{tr}}
+\index{tr@{tr}!optimResult@{optimResult}}
+\doxysubsubsection{\texorpdfstring{tr}{tr}}
+{\footnotesize\ttfamily \label{structoptim_result_abed18963a8bb2004a7cc4f20763940cb} 
+\mbox{\hyperlink{structtrajectory}{trajectory}} optim\+Result\+::tr}
+
+\doxylink{structoptim_result_abed18963a8bb2004a7cc4f20763940cb}{optim\+Result\+::tr} --- траектория работы оптимизатора типа trajectory. \Hypertarget{structoptim_result_ac2305b365a83a604694e16a8bf9249de}\index{optimResult@{optimResult}!x@{x}}
+\index{x@{x}!optimResult@{optimResult}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{structoptim_result_ac2305b365a83a604694e16a8bf9249de} 
+\mbox{\hyperlink{class_point}{Point}} optim\+Result\+::x}
+
+\doxylink{structoptim_result_ac2305b365a83a604694e16a8bf9249de}{optim\+Result\+::x} --- точка типа \doxylink{class_point}{Point}, полученная на последнем шаге работы оптимизатора. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Optimizer.\+h\end{DoxyCompactItemize}

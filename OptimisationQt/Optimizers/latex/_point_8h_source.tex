@@ -1,0 +1,26 @@
+\doxysection{Point.\+h}
+\hypertarget{_point_8h_source}{}\label{_point_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Point\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ Point()\ :\ dim(0)\ \{\}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_point_a360c733ed6c9eb90edc22ce5a07be594}{Point}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x)\ \ :\ dim(x.size()),\ coord(x)\ \{\}}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ other)\ :\ dim(other.dim)\ ,\ coord(other.coord)\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ Point(Point\&\&\ other);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_point_ac059bafe59a73b2a004a5f13c1ec6a68}{getDim}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dim;\ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ other)\ ;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\&\ operator=(\mbox{\hyperlink{class_point}{Point}}\&\&\ other)\ ;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_point_a92f80920c078157b3c42669c79e09bb5}{at}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coord.at(i);\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{operator}\ std::vector<double>()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coord;\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ print()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dim;}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<double>\ coord;}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

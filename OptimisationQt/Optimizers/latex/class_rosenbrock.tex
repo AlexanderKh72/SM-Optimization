@@ -1,0 +1,76 @@
+\doxysection{Шаблон класса Rosenbrock\texorpdfstring{$<$}{<} n \texorpdfstring{$>$}{>}}
+\hypertarget{class_rosenbrock}{}\label{class_rosenbrock}\index{Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}}
+
+
+Функция Розенброка  
+
+
+
+
+{\ttfamily \#include $<$Abstr\+Function.\+h$>$}
+
+Граф наследования\+:Rosenbrock\texorpdfstring{$<$}{<} n \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rosenbrock}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_rosenbrock_a78fce1c39290a20274c798f6a3cf1cb6}{get\+Dim}} () const override
+\item 
+double \mbox{\hyperlink{class_rosenbrock_ad00ec9c95cde50dd4f6a6d298709650c}{operator()}} (const std\+::vector$<$ double $>$ \&x) const override
+\item 
+std\+::string \mbox{\hyperlink{class_rosenbrock_afa28c938e92ae415df6443a11ff5d8f8}{name}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+\subsubsection*{template$<$size\+\_\+t n = 2$>$\newline
+class Rosenbrock$<$ n $>$}
+Функция Розенброка 
+
+\doxylink{class_rosenbrock}{Rosenbrock$<$n$>$} --- шаблон класса, реализующего функцию Розенброка размерности n. 
+
+\label{doc-func-members}
+\Hypertarget{class_rosenbrock_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_rosenbrock_a78fce1c39290a20274c798f6a3cf1cb6}\index{Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}!getDim@{getDim}}
+\index{getDim@{getDim}!Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getDim()}{getDim()}}
+{\footnotesize\ttfamily \label{class_rosenbrock_a78fce1c39290a20274c798f6a3cf1cb6} 
+template$<$size\+\_\+t n = 2$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_rosenbrock}{Rosenbrock}}$<$ n $>$\+::get\+Dim (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция \doxylink{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}{Abstr\+Function\+::get\+Dim} возвращает размерность функции, т.\+е. необходимую длину вектора для вычисления значения. 
+
+Замещает \mbox{\hyperlink{class_abstr_function_a02bc2e7ca1ea4e59fa1427fff9241d41}{Abstr\+Function}}.
+
+\Hypertarget{class_rosenbrock_afa28c938e92ae415df6443a11ff5d8f8}\index{Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}!name@{name}}
+\index{name@{name}!Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_rosenbrock_afa28c938e92ae415df6443a11ff5d8f8} 
+template$<$size\+\_\+t n = 2$>$ \\
+std\+::string \mbox{\hyperlink{class_rosenbrock}{Rosenbrock}}$<$ n $>$\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Функция Abstr\+::name возвращает имя функции. 
+
+Замещает \mbox{\hyperlink{class_abstr_function_a9ed327aa3dd9b8d876ca48cc354482c7}{Abstr\+Function}}.
+
+\Hypertarget{class_rosenbrock_ad00ec9c95cde50dd4f6a6d298709650c}\index{Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Rosenbrock$<$ n $>$@{Rosenbrock$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{class_rosenbrock_ad00ec9c95cde50dd4f6a6d298709650c} 
+template$<$size\+\_\+t n = 2$>$ \\
+double \mbox{\hyperlink{class_rosenbrock}{Rosenbrock}}$<$ n $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Оператор Abstr\+Function\+::operator() вычисляет значение функции в точке std\+::vector$<$double$>$ x. 
+
+Замещает \mbox{\hyperlink{class_abstr_function_af06f236851e8983df0ba8d74c87e5f1d}{Abstr\+Function}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Abstr\+Function.\+h\end{DoxyCompactItemize}

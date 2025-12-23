@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Оптимизация: Исходный файл AbstrOptimizer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Оптимизация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_abstr_optimizer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AbstrOptimizer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;AbstrFunction.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;RectArea.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Point.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structtrajectory.html">   12</a></span><span class="keyword">struct </span>trajectory {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">   13</a></span>    std::vector&lt;Point&gt; <a class="code hl_variable" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">xs</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">   15</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">   17</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    trajectory() : <a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a>(0) {}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_struct" href="structtrajectory.html">trajectory</a>(<a class="code hl_struct" href="structtrajectory.html">trajectory</a>&amp;&amp; other) noexcept : <a class="code hl_variable" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">xs</a>(std::move(other.xs)), <a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>(std::move(other.fs)), <a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a>(other.N) {}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    trajectory(<span class="keyword">const</span> trajectory&amp; other) : <a class="code hl_variable" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">xs</a>(other.<a class="code hl_variable" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">xs</a>), <a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>(other.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>), <a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a>(other.<a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a>) {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    trajectory operator=(trajectory&amp;&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_variable" href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">xs</a> = std::move(other.xs);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a> = std::move(other.fs);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a> = other.N;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structoptim_result.html">   38</a></span><span class="keyword">struct </span>optimResult {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">   39</a></span>    <a class="code hl_class" href="class_point.html">Point</a> <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">   41</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">   43</a></span>    <a class="code hl_struct" href="structtrajectory.html">trajectory</a> <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    optimResult(<span class="keyword">const</span> <a class="code hl_class" href="class_point.html">Point</a>&amp; <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structtrajectory.html">trajectory</a>&amp; <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>) : <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>(<a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>), <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>(<a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>), <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>(<a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>) {}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_struct" href="structoptim_result.html">optimResult</a>(<a class="code hl_struct" href="structoptim_result.html">optimResult</a>&amp;&amp; other) noexcept : <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>(std::move(other.x)), <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>(other.f), <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>(std::move(other.tr)) {}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    optimResult(<span class="keyword">const</span> optimResult&amp; other) : <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>(other.<a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a>), <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>(other.<a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a>), <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>(other.<a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a>)  {}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    optimResult operator=(optimResult&amp;&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_variable" href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">x</a> = std::move(other.x);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_variable" href="structoptim_result.html#a458106cf0dafe5823914c46810530545">f</a> = other.f;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_variable" href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">tr</a> = std::move(other.tr);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_abstr_stop_criteria.html">   64</a></span><span class="keyword">class </span><a class="code hl_class" href="class_abstr_stop_criteria.html">AbstrStopCriteria</a> {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_abstr_stop_criteria.html#af2a8a672a7043f675caf88319eb1ced9">   66</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_abstr_stop_criteria.html#af2a8a672a7043f675caf88319eb1ced9">IsSatisfied</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtrajectory.html">trajectory</a>&amp; t) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_s_c.html">   74</a></span><span class="keyword">class </span><a class="code hl_function" href="class_s_c.html#abc5a7f5912ce469c1456f4eda7109334">SC</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_abstr_stop_criteria.html">AbstrStopCriteria</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_s_c.html#abc5a7f5912ce469c1456f4eda7109334">   76</a></span>    <a class="code hl_function" href="class_s_c.html#abc5a7f5912ce469c1456f4eda7109334">SC</a>(<span class="keywordtype">double</span> epsilon, <span class="keywordtype">size_t</span> N) : epsilon(epsilon), N_max(N) {}</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_s_c.html#a4b78fdc0aaf9b7e6b96116a20d755d43">   81</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_c.html#a4b78fdc0aaf9b7e6b96116a20d755d43">IsSatisfied</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtrajectory.html">trajectory</a>&amp; t)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> (t.<a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a> &gt; 1 &amp;&amp; t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.size() &gt; 1) &amp;&amp; (std::abs((t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.at(t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.size() - 1) - t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.at(t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.size() - 2)) / t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.at(t.<a class="code hl_variable" href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">fs</a>.size() - 1)) &lt; epsilon) || (t.<a class="code hl_variable" href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">N</a> &gt; N_max);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">double</span> epsilon;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">size_t</span> N_max;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="};">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_abstr_optimizer.html">   97</a></span><span class="keyword">class </span><a class="code hl_class" href="class_abstr_optimizer.html">AbstrOptimizer</a> {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_abstr_optimizer.html#a6ae7f9ce657e3b52d95e1d03a3bfc2ae">   99</a></span>    <span class="keyword">virtual</span> <a class="code hl_struct" href="structoptim_result.html">optimResult</a> <a class="code hl_function" href="class_abstr_optimizer.html#a6ae7f9ce657e3b52d95e1d03a3bfc2ae">optimize</a>(std::shared_ptr&lt;const AbstrFunction&gt; f, <span class="keyword">const</span> <a class="code hl_class" href="class_point.html">Point</a>&amp; init,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_rect_area.html">RectArea</a>&amp; area, std::shared_ptr&lt;const AbstrStopCriteria&gt; stop_criteria) = 0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_abstr_optimizer.html#a0de1f32ccb8f281193b9b1ccc6293ae6">  109</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="class_abstr_optimizer.html#a0de1f32ccb8f281193b9b1ccc6293ae6">name</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
+</div>
+</div>
+</div>
+<div class="ttc" id="aclass_abstr_optimizer_html"><div class="ttname"><a href="class_abstr_optimizer.html">AbstrOptimizer</a></div><div class="ttdoc">Оптимизатор</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:97</div></div>
+<div class="ttc" id="aclass_abstr_optimizer_html_a0de1f32ccb8f281193b9b1ccc6293ae6"><div class="ttname"><a href="class_abstr_optimizer.html#a0de1f32ccb8f281193b9b1ccc6293ae6">AbstrOptimizer::name</a></div><div class="ttdeci">virtual std::string name() const =0</div></div>
+<div class="ttc" id="aclass_abstr_optimizer_html_a6ae7f9ce657e3b52d95e1d03a3bfc2ae"><div class="ttname"><a href="class_abstr_optimizer.html#a6ae7f9ce657e3b52d95e1d03a3bfc2ae">AbstrOptimizer::optimize</a></div><div class="ttdeci">virtual optimResult optimize(std::shared_ptr&lt; const AbstrFunction &gt; f, const Point &amp;init, const RectArea &amp;area, std::shared_ptr&lt; const AbstrStopCriteria &gt; stop_criteria)=0</div></div>
+<div class="ttc" id="aclass_abstr_stop_criteria_html"><div class="ttname"><a href="class_abstr_stop_criteria.html">AbstrStopCriteria</a></div><div class="ttdoc">Критерий остановки</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:64</div></div>
+<div class="ttc" id="aclass_abstr_stop_criteria_html_af2a8a672a7043f675caf88319eb1ced9"><div class="ttname"><a href="class_abstr_stop_criteria.html#af2a8a672a7043f675caf88319eb1ced9">AbstrStopCriteria::IsSatisfied</a></div><div class="ttdeci">virtual bool IsSatisfied(const trajectory &amp;t) const =0</div></div>
+<div class="ttc" id="aclass_point_html"><div class="ttname"><a href="class_point.html">Point</a></div><div class="ttdoc">Точка в многомерном пространстве.</div><div class="ttdef"><b>Определения</b> Point.h:8</div></div>
+<div class="ttc" id="aclass_rect_area_html"><div class="ttname"><a href="class_rect_area.html">RectArea</a></div><div class="ttdoc">Прямоугольная область</div><div class="ttdef"><b>Определения</b> RectArea.h:9</div></div>
+<div class="ttc" id="aclass_s_c_html_a4b78fdc0aaf9b7e6b96116a20d755d43"><div class="ttname"><a href="class_s_c.html#a4b78fdc0aaf9b7e6b96116a20d755d43">SC::IsSatisfied</a></div><div class="ttdeci">bool IsSatisfied(const trajectory &amp;t) const override</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:81</div></div>
+<div class="ttc" id="aclass_s_c_html_abc5a7f5912ce469c1456f4eda7109334"><div class="ttname"><a href="class_s_c.html#abc5a7f5912ce469c1456f4eda7109334">SC::SC</a></div><div class="ttdeci">SC(double epsilon, size_t N)</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:76</div></div>
+<div class="ttc" id="astructoptim_result_html"><div class="ttname"><a href="structoptim_result.html">optimResult</a></div><div class="ttdoc">Результат работы оптимизатора.</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:38</div></div>
+<div class="ttc" id="astructoptim_result_html_a458106cf0dafe5823914c46810530545"><div class="ttname"><a href="structoptim_result.html#a458106cf0dafe5823914c46810530545">optimResult::f</a></div><div class="ttdeci">double f</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:41</div></div>
+<div class="ttc" id="astructoptim_result_html_abed18963a8bb2004a7cc4f20763940cb"><div class="ttname"><a href="structoptim_result.html#abed18963a8bb2004a7cc4f20763940cb">optimResult::tr</a></div><div class="ttdeci">trajectory tr</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:43</div></div>
+<div class="ttc" id="astructoptim_result_html_ac2305b365a83a604694e16a8bf9249de"><div class="ttname"><a href="structoptim_result.html#ac2305b365a83a604694e16a8bf9249de">optimResult::x</a></div><div class="ttdeci">Point x</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:39</div></div>
+<div class="ttc" id="astructtrajectory_html"><div class="ttname"><a href="structtrajectory.html">trajectory</a></div><div class="ttdoc">Траектория оптимизации</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:12</div></div>
+<div class="ttc" id="astructtrajectory_html_a071d854245eb021a18fa5f4cbbeba5a5"><div class="ttname"><a href="structtrajectory.html#a071d854245eb021a18fa5f4cbbeba5a5">trajectory::xs</a></div><div class="ttdeci">std::vector&lt; Point &gt; xs</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:13</div></div>
+<div class="ttc" id="astructtrajectory_html_a47709d486e3bb31305736ba259bcaf1f"><div class="ttname"><a href="structtrajectory.html#a47709d486e3bb31305736ba259bcaf1f">trajectory::fs</a></div><div class="ttdeci">std::vector&lt; double &gt; fs</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:15</div></div>
+<div class="ttc" id="astructtrajectory_html_a968eded4b7c781933d0cdac29ee93899"><div class="ttname"><a href="structtrajectory.html#a968eded4b7c781933d0cdac29ee93899">trajectory::N</a></div><div class="ttdeci">size_t N</div><div class="ttdef"><b>Определения</b> AbstrOptimizer.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>AbstrOptimizer.h</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

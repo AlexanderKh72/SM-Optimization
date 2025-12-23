@@ -1,0 +1,23 @@
+\doxysection{Rect\+Area.\+h}
+\hypertarget{_rect_area_8h_source}{}\label{_rect_area_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Point.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rect_area_ade691cedee0057f70d191b69bd855876}{RectArea}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ TODO:\ consistent\ dimensions}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_rect_area_ade691cedee0057f70d191b69bd855876}{RectArea}}(\textcolor{keyword}{const}\ std::vector<double>\&\ l,\ \textcolor{keyword}{const}\ std::vector<double>\&\ r)\ :\ \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\_bound}}(l),\ right\_bound(r)\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_rect_area_ab0f80f84f6041de25f7425f54fb98a59}{RectArea}}(\textcolor{keywordtype}{double}\ x1\ =\ 0,\ \textcolor{keywordtype}{double}\ y1\ =\ 0,\ \textcolor{keywordtype}{double}\ x2\ =\ 1,\ \textcolor{keywordtype}{double}\ y2\ =\ 1)\ \ :\ \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\_bound}}(\{x1,\ y1\}),\ right\_bound(\{x2,\ y2\})\ \ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getDim()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\_bound}}.getDim();\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rect_area_a7c57ca4dff460c1413aab25aed31689d}{get\_l}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\_bound}}.at(i);\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rect_area_ac1f104115df996ded84d9aadb2ad7127}{get\_r}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ right\_bound.at(i);\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_rect_area_a91e32be1a373dd1ce4f1647fb51d879c}{left\_bound}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ right\_bound;}
+\DoxyCodeLine{00028\ \};}
+
+\end{DoxyCode}
