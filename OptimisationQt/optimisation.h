@@ -46,7 +46,7 @@ private slots:
     void on_SetMethodButton_clicked();
     void setOptimisationParameters();
     void pointSelected(QMouseEvent* event);
-    void drawContourLine();
+    void drawContour();
     void calculateFunction(QMouseEvent* event);
 
 private:
@@ -56,7 +56,6 @@ private:
     std::shared_ptr<AbstrFunction> func;
     std::shared_ptr<AbstrStopCriteria> stopcr;
     std::shared_ptr<RectArea> area;
-    std::vector<QCPAbstractItem*> contour;
 
 signals:
     void AreaChanged();

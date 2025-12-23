@@ -6,6 +6,10 @@
 #include "Optimizers/SimpleStochasticOptimizer.h"
 #include <sstream>
 #include <iomanip>
+#include <limits>
+
+const int N_CONTOUR = 1000;
+const int GRADIENT_LEVELS = 100;
 
 Optimisation::Optimisation(QWidget *parent)
     : QWidget(parent)
@@ -13,7 +17,7 @@ Optimisation::Optimisation(QWidget *parent)
 {
     ui->setupUi(this);
     connect(this, &Optimisation::AreaChanged, this, &Optimisation::ChangeArea);
-    connect(this, &Optimisation::AreaChanged, this, &Optimisation::drawContourLine);
+    connect(this, &Optimisation::AreaChanged, this, &Optimisation::drawContour);
 
     setOptimisationParameters();
 
@@ -53,32 +57,35 @@ void Optimisation::calculateFunction(QMouseEvent* event){
     ui->valueLabel->setText(QString::fromStdString(out.str()));
 }
 
-void Optimisation::drawContourLine() {
-    for (auto item = contour.begin(); item != contour.end(); ++item)
-        delete (*item);
-    contour.clear();
-    if (param.sphere) {
-        double min_radius = std::sqrt(param.lbx * param.lbx + param.lby * param.lby), max_radius = 0;
-        if (param.lbx < 0 && param.lby < 0 && param.rtx > 0 && param.rty > 0)
-            min_radius = 0;
-        else {
-            min_radius = std::min({std::sqrt(param.lbx * param.lbx + param.lby * param.lby),
-                                   std::sqrt(param.rtx * param.rtx + param.lby * param.lby),
-                                   std::sqrt(param.lbx * param.lbx + param.rty * param.rty),
-                                   std::sqrt(param.rtx * param.rtx + param.rty * param.rty)});
-        }
-        max_radius = std::max({std::sqrt(param.lbx * param.lbx + param.lby * param.lby),
-                               std::sqrt(param.rtx * param.rtx + param.lby * param.lby),
-                               std::sqrt(param.lbx * param.lbx + param.rty * param.rty),
-                               std::sqrt(param.rtx * param.rtx + param.rty * param.rty)});
-        for (double r = min_radius; r < max_radius; r = r + (max_radius - min_radius) / 10.0)
-        {
-            contour.push_back(new QCPItemEllipse(ui->customPlot));
-            dynamic_cast<QCPItemEllipse*>(contour.back())->topLeft->setCoords(-r, r);     // Plot coordinates
-            dynamic_cast<QCPItemEllipse*>(contour.back())->bottomRight->setCoords(r, -r); // Plot coordinates
-            dynamic_cast<QCPItemEllipse*>(contour.back())->setPen(QPen(Qt::blue));
+QVector<QColor> hsvGradientPalette(int count) {
+    QVector<QColor> colors;
+    for (int i = 0; i < count; ++i) {
+        float hue = 240 * (1 - i / float(count - 1));  // 240°(blue) to 0°(red)
+        colors.append(QColor::fromHsv(hue, 255, 255));
+    }
+    return colors;
+}
+
+void Optimisation::drawContour() {
+    QImage image(N_CONTOUR, N_CONTOUR, QImage::Format_ARGB32);
+    std::vector<std::vector<double>> values;
+    double min_value = std::numeric_limits<double>::max();
+    double max_value = std::numeric_limits<double>::min();
+    values.resize(N_CONTOUR);
+    double hx = (param.rtx - param.lbx) / N_CONTOUR, hy = (param.rty - param.lby) / N_CONTOUR;
+    for (int i = 0; i < N_CONTOUR; ++i) {
+        values[i].resize(N_CONTOUR);
+        for (int j = 0; j < N_CONTOUR; ++j) {
+            values[i][j] = (*func)({param.lbx + i * hx, param.rty - hy * j});
+            min_value = std::min(min_value, values[i][j]);
+            max_value = std::max(max_value, values[i][j]);
         }
     }
+    auto palette = hsvGradientPalette(GRADIENT_LEVELS);
+    for (int i = 0; i < N_CONTOUR; ++i)
+        for (int j = 0; j < N_CONTOUR; ++j)
+            image.setPixelColor(i, j, palette[std::min<int>(floor((values[i][j] - min_value) / (max_value - min_value) * GRADIENT_LEVELS), GRADIENT_LEVELS - 1)]);
+    ui->customPlot->setBackground(QPixmap::fromImage(image), true);
     ui->customPlot->replot();
 }
 
@@ -88,7 +95,7 @@ void Optimisation::on_SetMethodButton_clicked()
     connect(&dialog, &Dialog_SetMethod::optimisationParametersChanged, this, &Optimisation::setOptimisationParameters);
     connect(&dialog, &Dialog_SetMethod::MethodChanged, this, &Optimisation::ChangeParamLabel);
     connect(&dialog, &Dialog_SetMethod::FunctionChanged, this, &Optimisation::ChangeParamLabel);
-    connect(&dialog, &Dialog_SetMethod::FunctionChanged, this, &Optimisation::drawContourLine);
+    connect(&dialog, &Dialog_SetMethod::FunctionChanged, this, &Optimisation::drawContour);
 
     dialog.exec();
 }
